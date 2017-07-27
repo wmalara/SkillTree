@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SkillTree.Core.Shared;
 
 namespace SkillTree.Core
 {
-    public class TextContent
+    public class TextContent : ComparableObject<TextContent>
     {
         public TextContent(string text)
         {
@@ -12,5 +10,9 @@ namespace SkillTree.Core
         }
 
         public string Text { get; }
+
+        public override bool Equals(TextContent other) => Text == other.Text;
+
+        protected override int[] GetFieldsHashCodes() => new[] { Text.GetHashCode() };
     }
 }

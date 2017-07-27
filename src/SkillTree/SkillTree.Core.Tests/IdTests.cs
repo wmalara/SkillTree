@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SkillTree.Core.Shared;
+using System;
 using Xunit;
 
 namespace SkillTree.Core.Tests

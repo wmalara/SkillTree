@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 
-namespace SkillTree.Core
+namespace SkillTree.Core.Shared
 {
-    public abstract class ValueObject<T> : IEquatable<T>
+    public abstract class ComparableObject<T> : IEquatable<T>
     {
-        public static bool operator == (ValueObject<T> first, T second) => first.Equals(second);
+        public static bool operator == (ComparableObject<T> first, T second) => first.Equals(second);
 
-        public static bool operator != (ValueObject<T> first, T second) => first.Equals(second) == false;
+        public static bool operator != (ComparableObject<T> first, T second) => first.Equals(second) == false;
 
         public abstract bool Equals(T other);
 

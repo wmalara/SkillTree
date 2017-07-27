@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SkillTree.Core
+namespace SkillTree.Core.Shared
 {
-    public class Id : ValueObject<Id>
+    public class Id : ComparableObject<Id>
     {
         private readonly Guid guid;
 

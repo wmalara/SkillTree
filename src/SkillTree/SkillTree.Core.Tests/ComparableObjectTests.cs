@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SkillTree.Core.Shared;
 using Xunit;
 
 namespace SkillTree.Core.Tests
 {
-    public class ValueObjectTests
+    public class ComparableObjectTests
     {
         [Fact]
         public void EqualsForStructuralEquality()
@@ -148,7 +146,7 @@ namespace SkillTree.Core.Tests
             Assert.NotEqual(secondHashCode, firstHashCode);
         }
 
-        class TestValueObject : ValueObject<TestValueObject>
+        class TestValueObject : ComparableObject<TestValueObject>
         {
             private readonly int age;
             private readonly string name;

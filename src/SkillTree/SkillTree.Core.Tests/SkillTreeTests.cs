@@ -3,13 +3,13 @@ using Xunit;
 
 namespace SkillTree.Core.Tests
 {
-    public class SkillTreeRootTests
+    public class SkillTreeTests
     {
         [Fact]
         public void CanAddSkills()
         {
             // Arrange
-            var root = new SkillTreeRoot();
+            var root = new SkillTree();
             var skill1 = Skill.Create("Programming");
             var skill2 = Skill.Create("Economics");
 
