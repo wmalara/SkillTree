@@ -42,7 +42,7 @@ namespace SkillTree.Core.Tests
         }
 
         [Fact]
-        public void AreTwoIdsWithSameGuidEqual()
+        public void AreTwoIdsWithSameGuidAreEqual()
         {
             //Arrange
             var guid = new Guid();

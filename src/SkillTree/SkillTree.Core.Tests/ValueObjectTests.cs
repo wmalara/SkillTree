@@ -18,6 +18,7 @@ namespace SkillTree.Core.Tests
             //Assert
             Assert.True(first.Equals(second));
             Assert.True(first.Equals((object)second));
+            Assert.True(object.Equals(first, second));
             Assert.True(first == second);
             Assert.False(first != second);
         }
@@ -33,6 +34,7 @@ namespace SkillTree.Core.Tests
             //Assert
             Assert.True(first.Equals(second));
             Assert.True(first.Equals((object)second));
+            Assert.True(object.Equals(first, second));
             Assert.True(first == second);
             Assert.False(first != second);
         }
@@ -51,8 +53,38 @@ namespace SkillTree.Core.Tests
             //Assert
             Assert.False(first.Equals(second));
             Assert.False(first.Equals((object)second));
+            Assert.False(object.Equals(first, second));
             Assert.False(first == second);
             Assert.True(first != second);
+        }
+
+        [Fact]
+        public void DoesntEqualNull()
+        {
+            //Arrange
+            var first = new TestValueObject(123, "test");
+            TestValueObject second = null;
+
+            //Act
+            //Assert
+            Assert.False(first.Equals(second));
+            Assert.False(first.Equals((object)second));
+            Assert.False(object.Equals(first, second));
+            Assert.False(first == second);
+            Assert.True(first != second);
+        }
+
+        [Fact]
+        public void DoesntEqualObjectOfOtherType()
+        {
+            //Arrange
+            var sut = new TestValueObject(123, "test");
+            var other = "test";
+
+            //Act
+            //Assert
+            Assert.False(sut.Equals(other));
+            Assert.False(object.Equals(sut, other));
         }
 
         [Fact]
